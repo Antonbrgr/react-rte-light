@@ -1,0 +1,100 @@
+.rich-text-editor {
+    --editor-bg: #ffffff;
+    --editor-text: #000000;
+    --border-color: #cccccc;
+    --toolbar-bg: #f0f0f0;
+    --hover-bg: #dddddd;
+    --active-bg: #cccccc;
+    --link-color: #0000ff;
+    --quote-color: #666666;
+    --code-bg: #f5f5f5;
+  }
+  
+  .rich-text-editor.theme-dark {
+    --editor-bg: #333333;
+    --editor-text: #ffffff;
+    --border-color: #555555;
+    --toolbar-bg: #222222;
+    --hover-bg: #444444;
+    --active-bg: #555555;
+    --link-color: #add8e6;
+    --quote-color: #aaaaaa;
+    --code-bg: #444444;
+  }
+  
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--toolbar-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 5px;
+  }
+  
+  .toolbar-button {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .toolbar-button:hover {
+    background: var(--hover-bg);
+  }
+  
+  .toolbar-button.active {
+    background: var(--active-bg);
+  }
+  
+  .editor-container {
+    background: var(--editor-bg);
+    color: var(--editor-text);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    min-height: 200px;
+  }
+  
+  .editor-container :global(.DraftEditor-root) {
+    position: relative;
+  }
+  
+  .editor-container :global(.public-DraftEditorPlaceholder-root) {
+    color: #999999;
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  .editor-container :global(.public-DraftStyleDefault-blockquote) {
+    border-left: 5px solid var(--border-color);
+    color: var(--quote-color);
+    padding-left: 10px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .editor-container :global(.public-DraftStyleDefault-header-one) {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  .editor-container :global(.public-DraftStyleDefault-header-two) {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .editor-container :global(.public-DraftStyleDefault-orderedListItem),
+  .editor-container :global(.public-DraftStyleDefault-unorderedListItem) {
+    margin-left: 20px;
+  }
+  
+  .editor-container :global(.public-DraftStyleDefault-code-block) {
+    background: var(--code-bg);
+    font-family: monospace;
+    padding: 10px;
+  }
+  
+  .editor-container :global(a) {
+    color: var(--link-color);
+    text-decoration: underline;
+  }

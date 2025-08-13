@@ -1,0 +1,44 @@
+{
+    "name": "react-rte-light",
+    "version": "1.0.0",
+    "description": "A lightweight, flexible rich text editor component for React, compatible from React 16.8 to 19.",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/index.d.ts",
+    "style": "dist/style.css",
+    "files": [
+      "dist"
+    ],
+    "scripts": {
+      "build": "vite build && tsc --emitDeclarationOnly --outDir dist",
+      "test": "vitest"
+    },
+    "peerDependencies": {
+      "react": ">=16.8.0 <20.0.0",
+      "react-dom": ">=16.8.0 <20.0.0"
+    },
+    "dependencies": {
+      "draft-js": "^0.11.7",
+      "draft-convert": "^2.1.12"
+    },
+    "devDependencies": {
+      "@types/draft-js": "^0.11.18",
+      "@types/react": "^18.3.3",
+      "@types/react-dom": "^18.3.0",
+      "@vitejs/plugin-react": "^4.3.1",
+      "typescript": "^5.5.4",
+      "vite": "^5.3.5",
+      "vite-plugin-dts": "^4.0.3",
+      "vitest": "^2.0.4",
+      "@testing-library/react": "^16.0.0",
+      "jsdom": "^24.1.1"
+    },
+    "author": "Grok by xAI",
+    "license": "MIT",
+    "keywords": [
+      "react",
+      "rich-text-editor",
+      "draft-js",
+      "wysiwyg"
+    ]
+  }
